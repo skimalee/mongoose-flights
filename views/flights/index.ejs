@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Flight Number</th>
+        <th>Departs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterate over movies array and write a 
+        table row (<tr>) for each with 
+        cols (<td>) that match the above headings (<th>) -->
+      <% flight.forEach(function(flight) { %>
+        <tr>
+          <td><%= flight.airline %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs %></td>  
+          <td><a href="/flights/<%=flight._id%>">DETAILS</a></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+
+</html>
