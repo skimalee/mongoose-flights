@@ -1,15 +1,43 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /* text-align: center */
+  margin: 0;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  background-image: url(https://i.imgur.com/iUakImi.jpg);
+  background-size: cover;
 }
 
-a {
+.details  {
   color: #00B7FF;
+  text-decoration: none;
+  border-radius: 5px;
+  background: yellow;
+  height: 20px;
+  width: 10px;
 }
+
+body > nav {
+  grid-area: nav;
+  background-color: rgba(0, 0, 100, .25);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+nav > a {
+  margin: 10px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
 table {
-  font-size: 20px;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 table thead th {
   padding: 5px;
@@ -19,6 +47,7 @@ table thead th {
 table td {
   padding: 10px;
   text-align: center;
+  margin: 0 auto;
 }
 
 input {
@@ -29,31 +58,51 @@ input {
   text-align: center;
 }
 
-#new-form {
+#new-form,
+#add-destination,
+/* #show-page { */
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
+  grid-template-columns: auto auto
 }
 
-#new-form input[type="submit"] {
-  grid-column: span 2;
+
+.add-destination {
+  background: pink;
+  border-radius: 5px;
+}
+/* #new-form input[type="submit"]
+#add-destination input {
+  grid-template-column: span 2;
   width: 10rem;
   margin-left: auto;
-}
+}  */
 
-#show-page {
-  display: grid;
+main {
+  /* display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 3rem;
-  width: 700px;
+  grid-gap: 3rem; */
+  width: 800px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
-#show-page div:nth-child(even) {
+#show-page div:nth-child(odd) {
   font-weight: bold;
+  font-size: 20px;
 }
-#add-destination input[type="submit"] {
+
+div {
+  padding: 5px;
+  margin-bottom: 10px
+}
+/* #add-destination input[type="submit"] {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 3rem;
   width: 700px;
-}
+} */

@@ -9,44 +9,47 @@
   <div><%= String(flight.departs).substr(0,16) %></div>
   <div>Origin: </div>
   <div><%= flight.airport %></div>
-</section>
-
-
- <% if (flight.destinations.length) { %>
-    <table>
-        <thead>
-          <tr>
-            <th>Destination</th>
-            <th>Arrival</th>
-          </tr>
-        </thead>
-        <tbody>
+  <div>Destination:</div>
+  <div>
+    <% if (flight.destinations.length) { %>
 
     <% flight.destinations.forEach(function(flight) { %>
-
+      <table>
         <tr>
             <td><%= flight.destination %></td>
             <td><%= flight.arrival %></td>
         </tr>
+      </table> 
         <% }); %>
 
-  <% } else { %>
-    <h5>Destination has not been set</h5>
-  <% } %>
+      <% } else { %>
+        <h5>Destination has not been set</h5>
+      <% } %>
+    <div class="add-destination">
+      <form id="add-destination" method="POST" action="/flights/<%= flight._id %>/destinations">
+        <label>Destination:
+        <select name="destination">
+            <option value="AUS">AUS</option>
+            <option value="DAL">DAL</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+            <option value="SEA">SEA</option>
+        </select>
+        </label><br>
+        <label>Arrival Time:
+            <input type="time" name="arrival">
+        </label><br>
+        <input type="submit" value="Add Destination">
+      </form>
+    </div>
+  </div>
+  <div></div>
+  <div>
+  
+  </div>
 
-  <form id="add-destination" method="POST"
-   action="/flights/<%= flight._id %>/destinations">
-    <label>Destination:
-    <select name="destination">
-        <option value="AUS">AUS</option>
-        <option value="DAL">DAL</option>
-        <option value="LAX">LAX</option>
-        <option value="SAN">SAN</option>
-        <option value="SEA">SEA</option>
-    </select>
-    </label><br>
-    <label>Arrival Time:
-        <input type="time" name="arrival">
-    </label><br>
-    <input type="submit" value="Add Destination">
- </form>
+<div>Tickets:</div>
+<div><a href="/flights/<%= flight._id %>/tickets/new">ADD TICKET</a></div>
+
+</section>
+  

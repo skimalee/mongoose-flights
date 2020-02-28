@@ -17,7 +17,7 @@
           <td><%= flight.airline %></td>
           <td><%= flight.flightNo %></td>
           <td><%= String(flight.departs).substr(0,16) %></td>  
-          <td><a href="/flights/<%=flight._id%>">DETAILS</a></td>
+          <td><a class="details" href="/flights/<%=flight._id%>">DETAILS</a></td>
         </tr>
       <% }); %>
     </tbody>
