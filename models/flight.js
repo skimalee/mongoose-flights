@@ -22,7 +22,8 @@ const flightSchema = new Schema({
         max: 9999
     },
     departs: {
-        type: String
+        type: Date,
+        default: new Date() + 365*24*60*60*1000
     },
     airport: {
         type: String,

@@ -6,7 +6,7 @@
   <div>Flight Number: </div>
   <div><%= flight.flightNo %></div>
   <div>Departure Date: </div>
-  <div><%= flight.departs %></div>
+  <div><%= String(flight.departs).substr(0,16) %></div>
   <div>Origin: </div>
   <div><%= flight.airport %></div>
 </section>

@@ -12,11 +12,11 @@
       <!-- Iterate over movies array and write a 
         table row (<tr>) for each with 
         cols (<td>) that match the above headings (<th>) -->
-      <% flight.forEach(function(flight) { %>
+      <% flights.forEach(function(flight) { %>
         <tr>
           <td><%= flight.airline %></td>
           <td><%= flight.flightNo %></td>
-          <td><%= flight.departs %></td>  
+          <td><%= String(flight.departs).substr(0,16) %></td>  
           <td><a href="/flights/<%=flight._id%>">DETAILS</a></td>
         </tr>
       <% }); %>
