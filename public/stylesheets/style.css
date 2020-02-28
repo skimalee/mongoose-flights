@@ -48,6 +48,8 @@ table td {
   padding: 10px;
   text-align: center;
   margin: 0 auto;
+  background: rgba(0, 0, 0, .5);
+  color: white;
 }
 
 input {

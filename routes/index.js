@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log('HITTING HITTING')
-  res.render('index', { title: 'Express' });
+  res.redirect('flights')
 });
 
 module.exports = router;

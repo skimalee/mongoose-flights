@@ -9,15 +9,15 @@ module.exports = {
 function newTicket(req, res) {
     res.render(`/tickets/new`, {
         title: 'Add Ticket',
-        flightId: req.params.flightId
+        flightId: req.params.id
     });
 };
 
 function create(req, res) {
     const ticketObject = req.body
-    const flightId = req.params.flightId
+    const flightId = req.params.id
 
-    ticketObject.flightId = flightId
+    ticketObject.id = flightId
 
     const ticket = new Ticket(ticketObject)
 
