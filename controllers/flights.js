@@ -35,8 +35,9 @@ function newFlight(req, res) {
 
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        Ticket.find({flight: flight._id}, function(err, tickets) {
-            res.render('flights/show', {title: 'All Flights', flight});
+        Ticket.find({flightId: flight._id}, function(err, tickets) {
+            console.log(tickets)
+            res.render('flights/show', {title: 'All Flights', flight, tickets});
         }) 
     })
 }

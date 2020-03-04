@@ -30,7 +30,11 @@ const flightSchema = new Schema({
         enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA' ],
         default: 'SAN'
     },
-    destinations: [destinationSchema]
+    destinations: [destinationSchema],
+    tickets: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Ticket'
+    }]
 })
 
 module.exports = mongoose.model(

@@ -49,7 +49,21 @@
   </div>
 
 <div>Tickets:</div>
-<div><a href="tickets/new">ADD TICKET</a></div>
+<div><a href= "/flights/<%= flight._id %>/tickets/new">ADD TICKET</a></div>
+<% if (flight.tickets.length) { %>
+
+  <% flight.tickets.forEach(function(ticket) { %>
+    <table>
+      <tr>
+          <td><%= flight.seat %></td>
+          <td><%= ticket.price %></td>
+      </tr>
+    </table> 
+      <% }); %>
+
+    <% } else { %>
+      <h5>Destination has not been set</h5>
+    <% } %>
 
 </section>
   

@@ -61,7 +61,7 @@ input {
 }
 
 #new-form,
-#add-destination,
+#add-destination {
 /* #show-page { */
   display: grid;
   grid-gap: 10px;
@@ -69,10 +69,10 @@ input {
 }
 
 
-.add-destination {
+/* .add-destination {
   background: pink;
   border-radius: 5px;
-}
+} */
 /* #new-form input[type="submit"]
 #add-destination input {
   grid-template-column: span 2;
